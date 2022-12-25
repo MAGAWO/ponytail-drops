@@ -71,6 +71,7 @@
 
 .content {
   padding-bottom: 0;
+  margin-bottom: -10px;
 }
 
 .content::after {
@@ -173,6 +174,10 @@
   font-size: clamp(11pt, 13pt, 15pt);
   font-family: Zen Maru Gothic, sans-serif;
   padding-bottom: 10vh;
+}
+
+.information p.margin{
+  margin-bottom: 1vh;
 }
 
 .information img.cover {
@@ -307,7 +312,7 @@
   width: 100vw;
   height: 100vh;
   transition: all 1s;
-  background-color: rgba(0,0,0,0.5);
+  background-image: linear-gradient( 135deg, #ef801b 10%, #e73717 100%);
   z-index: 1000;
 }
 
@@ -442,8 +447,10 @@
     <div class="row">
       <div class="col-sm-3">
         <h1 class="booktitle">銭湯でサウナ</h1>
-        <h4>コミックマーケット 101<br />2022.12.31(日) (2日目)<br />東5ホール ヘ07ab</h4>
-        <h4>Circle's Square + suntrap notes.</h4>
+        <p class="margin"></p>
+        <h4>コミックマーケット 101<br />2022.12.31(日) (2日目)</h4>
+        <p class="margin"></p>
+        <h4>東5ホール ヘ07ab<br />Circle's Square + suntrap notes.</h4>
         にて委託頒布予定
         <p>その他、通販サイトにて販売かも...?</p>
         <table class="table table-sm table-borderless">
