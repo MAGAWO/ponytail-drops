@@ -16,9 +16,7 @@
 <meta name="twitter:site" content="@ponytail-drops" />
 <meta name="twitter:title" content="銭湯サウナ | ponytail drops" />
 <meta name="twitter:description" content="銭湯にあるサウナのハウツー本。サウナ入門や銭湯にあるサウナの特徴、板橋区のサウナがある銭湯の紹介。C101(2022年冬コミ)、各種通販サイトにて頒布予定" />
-<meta name="twitter:image" content="https://ponytail-drops.com/img/top.webp" />
-<meta name="mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="twitter:image" content="https://ponytail-drops.com/img/cover.webp" />
 <meta name="apple-mobile-web-app-title" content="銭湯でサウナ">
 <meta name="theme-color" content="black">
 <!--link rel="favicon"-->
@@ -30,7 +28,7 @@
 .section-top {
   position: relative;
   width: 100%;
-  height: 100vh;
+  height: 99vh;
 }
 
 .section-main {
@@ -170,6 +168,7 @@
   font-family: Zen Maru Gothic, sans-serif;
   padding-top: 5px;
   padding-bottom: 10vh;
+  margin-top: -1px;
 }
 
 .information p.margin{
@@ -501,13 +500,6 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 <script src="https://code.jquery.com/jquery-3.6.3.slim.js" integrity="sha256-DKU1CmJ8kBuEwumaLuh9Tl/6ZB6jzGOBV/5YpNE2BWc=" crossorigin="anonymous"></script>
 <script>
-
-document.body.addEventListener('touchmove', (e) => {
-  if (e.touches.length > 1) {
-    e.preventDefault();
-  }
-}, {passive: false});
-
 
 window.onload = ()=>{
     const loader = document.getElementById('loader');
