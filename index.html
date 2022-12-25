@@ -22,16 +22,20 @@
 <meta name="apple-mobile-web-app-title" content="銭湯でサウナ">
 <meta name="theme-color" content="black">
 <!--link rel="favicon"-->
-<!--link rel="preload"-->
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
 <style>
 
-.section {
+.section-top {
   position: relative;
-  width: 100vw;
+  width: 100%;
   height: 100vh;
+}
+
+.section-main {
+  position: relative;
+  width: 100%;
 }
 
 .section-inner {
@@ -39,7 +43,7 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
+  clip: rect(auto, auto, auto, auto);
 }
 
 .section-image {
@@ -51,85 +55,43 @@
   width: 100vw;
   height: 100vh;
   background-size: cover;
-  background-position: bottom right;
+  background-position: top right;
   background-image: url('./img/top.webp');
 }
 
-.Section-Content {
+.section-content {
   width: 100%;
-  height: 100%;
   display: flex;
   justify-content: center;
-  padding: 32px;
 }
 
-.Section-Text {
+.section-Text {
   width: 100%;
-  max-width: 800px;
-  height: 100%;
-  padding: 32px;
-  background-color: rgba(255, 255, 255, 0.8);
-}
-
-.OtherSection {
-  width: 100%;
-  height: 600px;
-  background-color: lightgray;
-}
-
-.bg-image {
-  width: 100%;
-  height: 100vh;
-  background-repeat: no-repeat;
-  background-position: bottom right;
-  background-image: url('./img/top.webp');
-  background-size: cover;
-  position: fixed;
-}
-
-/*
-.bg-image::before {
-  content: "";
-  display: block;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: -1;
-  width: 100%;
-  height: 100vh;
-  background-repeat: no-repeat;
-  background-position: bottom right;
-  background-image: url('./img/top.webp');
-  background-size: cover;
-}
-
-*/
-
-.top {
-  height: 100vh;
+  background-color: rgba(46, 167, 224, 0.65);
+  color: #f0f0f0;
+  font-size: clamp(11pt, 13pt, 15pt);
+  font-family: Zen Maru Gothic, sans-serif;
 }
 
 .logo img {
-    position: absolute;
-    margin: auto;
-    bottom : 10vh;
-    left: 15vw;
-    width: calc(20vw + 100px);
+  position: absolute;
+  margin: auto;
+  bottom : 10vh;
+  left: 15vw;
+  width: calc(20vw + 100px);
 }
 
-.content::after {
-  content: '';
-  background-color: #2ea7e0;
-  opacity: 0.7;
-  position: relative;
-  left: 0;
-  right: 0;
-  top: 100vh;
-  bottom: 0;
-  z-index: -1;
+.pdlogo-top img {
+  position: absolute;
+  margin: auto;
+  top: 2vh;
+  right: 2vw;
+  width: 30vw;
+  max-width: 200px;
 }
 
-.content .content-block {
+
+.content-block {
   color: #f0f0f0;
   font-size: clamp(11pt, 13pt, 15pt);
   position: relative;
@@ -137,7 +99,7 @@
   z-index: 1000;
 }
 
-.content .balloon-left {
+.content-block .balloon-left {
   position: relative;
   display: inline-block;
   margin: 1.5em 15% 1.5em 15px;
@@ -148,7 +110,7 @@
   border-radius: 15px;
 }
 
-.content .balloon-left:before {
+.content-block .balloon-left:before {
   content: "";
   position: absolute;
   top: 50%;
@@ -158,7 +120,7 @@
   border-right: 15px solid #3a4d9e;
 }
 
-.content .balloon-right {
+.content-block .balloon-right {
   position: relative;
   display: inline-block;
   margin: 1.5em 15px 1.5em 15%;
@@ -169,7 +131,7 @@
   border-radius: 15px;
 }
 
-.content .balloon-right:before {
+.content-block .balloon-right:before {
   content: "";
   position: absolute;
   top: 50%;
@@ -179,12 +141,12 @@
   border-left: 15px solid #3a4d9e;
 }
 
-.content .blur {
+.content-block .blur {
   text-shadow: 0px 0px 15px rgba(255, 255, 255, 1);
   font-size: clamp(11pt, 12pt, 14pt);
 }
 
-.content p.margin {
+.content-block p.margin {
   margin-bottom: 10%;
 }
 
@@ -201,23 +163,8 @@
   margin-bottom: 5%;
 }
 
-/*
-.delimiter.deep::before {
-  content: '';
-  background-color: #2ea7e0;
-  opacity: 0.65;
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  z-index: 1;
-}
-*/
-
 .information {
-  margin-top: -1px;
-  background-color: #3584a9;
+  background-color: #2ea7e0;
   color: #f0f0f0;
   font-size: clamp(11pt, 13pt, 15pt);
   font-family: Zen Maru Gothic, sans-serif;
@@ -226,10 +173,10 @@
 }
 
 .information p.margin{
-  margin-bottom: 2vh;
+  margin-bottom: 3vh;
 }
 
-.information img.cover {
+.information img.sample {
   width: 100%;
   border: 2px solid #2ea7e0;
   border-radius: 15px;
@@ -238,6 +185,14 @@
 .information .table {
   font-size: clamp(9pt, 10pt, 11pt);
   color: #e0e0e0;
+}
+
+.information .table td.right {
+  text-align: right;
+}
+
+.information .table td {
+  vertical-align: middle;
 }
 
 .information .table img {
@@ -448,132 +403,112 @@
   </div>
 </div>
 
-    <section class="section">
-      <div class="section-inner">
-        <div class="section-image"></div>
-        <div class="Section-Content">
-        </div>
-      </div>
-    </section>
-    <section class="section">
-      <div class="section-inner">
-        <div class="section-image"></div>
-        <div class="Section-Content">
-          <div class="Section-Text">
-            ダミーテキストダミーテキストダミーテキストダミーテキストダミーテキスト
+<section class="section-top">
+  <div class="section-inner">
+    <div class="section-image"></div>
+      <div class="logo"><img src="./img/logo.svg"></div>
+      <div class="pdlogo-top"><img src="./img/ponytaildrops_logo.svg"></div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section-main">
+  <div class="section-inner">
+    <div class="section-image"></div>
+    <div class="delimiter">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#2ea7e0" fill-opacity="0.65" d="M0,128L48,138.7C96,149,192,171,288,197.3C384,224,480,256,576,224C672,192,768,96,864,96C960,96,1056,192,1152,229.3C1248,267,1344,245,1392,234.7L1440,224L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>
+    </div>
+    <div class="section-content">
+      <div class="section-Text">
+
+        <div class="content-block container">
+          <div class="row">
+            <div class="col-12" id="catchcopy"><h1>はじめてサウナも、お気軽サウナも、日常サウナも。</h1></div>
+          </div>
+          <div class="row">
+            <div class="col-12" id="subcatchcopy"><h4>銭湯サウナ入門ガイドブック</h4></div>
+          </div>
+          <div class="row">
+            <div class="col-sm">
+              <p class="blur balloon-left">サウナってよく聞くしちょっと興味はあるけど、一部の熱狂的な人たちだけで盛り上がってるイメージがあるし、サウナ施設で粗相したら怖い。</p>
+              <p class="blur balloon-right">たまには足を伸ばしてお風呂につかりたいなと思う時はあるけど、銭湯って設備も古いし常連ルールとかありそうだし、結局自宅でお湯貯めて入っちゃう。銭湯は子供の頃に家族で入ったのが最後かな。</p>
+              <p class="blur balloon-left">サウナは好きだけど、結構お金かかるよね。この頃は料金の値上げもよく聞くし。毎週何回も行ってる人とかもいるみたいだけど良く行けるなあ。</p>
+            </div>
+            <div class="col-sm normal">
+              <p>こんな感想を持つ方、案外多いんじゃないでしょうか。
+              <p>そんなあなたに贈る、銭湯サウナ入門ガイドブックです。板橋区にある、サウナがある銭湯のレビューも併せて掲載。</p>
+              <p class="margin"></p>
+              <p>世は空前のサウナブーム。</p>
+              <p>対照的に、銭湯は燃料の高騰や来客数減少で休業や廃業となる施設が増えています。</p>
+              <p>銭湯とサウナを、もっと気軽に。もっと日常に。そんな風に感じてくれることを願って。</p>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
-    <section class="section">
-      <div class="section-inner">
-        <div class="section-image"></div>
-        <div class="Section-Content">
-          <div class="Section-Text">
-            ダミーテキストダミーテキストダミーテキストダミーテキストダミーテキスト
+        
+        <div class="delimiter">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#2ea7e0" fill-opacity="1" d="M0,128L48,138.7C96,149,192,171,288,197.3C384,224,480,256,576,224C672,192,768,96,864,96C960,96,1056,192,1152,229.3C1248,267,1344,245,1392,234.7L1440,224L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>
+        </div>
+        
+        <div class="information">
+          <div class="container">
+            <div class="row">
+              <div class="col-xl-3">
+                <h1 class="booktitle">銭湯でサウナ</h1>
+                <p class="margin"></p>
+                <h4>コミックマーケット 101<br />2022.12.31(日) (2日目)</h4>
+                <p class="margin"></p>
+                <h4>東5ホール ヘ07ab<br />Circle's Square + suntrap notes.</h4>
+                <p class="margin"></p>
+                <p>にて委託頒布予定<br />
+                その他、通販サイトにて販売かも...?</p>
+                <table class="table table-sm table-borderless">
+                  <thead>
+                    <tr><td class="right">発行</td><td>ponytail drops <a href="https://ponytail-drops.com" target="_blank"><img class="home" src="./img/home.svg" alt="home"></a><a href="https://twitter.com/ponytail-drops" target="_blank"><img class="twitter" src="./img/twitter.svg" alt="twitter"></a></td></tr>
+                    <tr><td class="right">コンテンツ本文<br />コンテンツデザイン</td><td>MAGAWO <a href="https://twitter.com/magawo1124" target="_blank"><img class="twitter" src="./img/twitter.svg" alt="twitter"></a></td></tr>
+                    <tr><td class="right">表紙イラスト</td><td>はやうお <a href="https://twitter.com/odds0310" target="_blank"><img class="twitter" src="./img/twitter.svg" alt="twitter"></a></td></tr>
+                    <tr><td class="right">表紙/裏表紙<br />デザイン</td><td>みなみ <a href="https://twitter.com/minami_orzoooo" target="_blank"><img class="twitter" src="./img/twitter.svg" alt="twitter"></a></td></tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="col-xl-9" >
+                <img src="./img/cover.webp" class="sample" alt="cover">
+                <img src="./img/content1.webp" class="sample" alt="content1">
+                <img src="./img/content2.webp" class="sample" alt="content2">
+              </div>
+            </div>
           </div>
         </div>
+
+        <div class="footer">
+          <div class="container">
+            <div class="row">
+              <div class="col center">
+                <p><img class="ponytaildrops_logo" src="./img/ponytaildrops_logo.svg"></p>
+                <p>Copyright (c) 2022 ponytail drops All Rights Reserved.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
-    </section>
-    <section class="OtherSection"></section>
+    </div>
+  </div>
+</section>
     
-<!--
-<div class="Firstview">FirstView</div>
--->
 
-<!--
-<div class="bg-image">
-  <div class="top">
-
-    <div class="logo">
-      <img src="./img/logo.svg">
-    </div>
-
-  </div>
-
-  <div class="delimiter">
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#2ea7e0" fill-opacity="0.65" d="M0,128L48,138.7C96,149,192,171,288,197.3C384,224,480,256,576,224C672,192,768,96,864,96C960,96,1056,192,1152,229.3C1248,267,1344,245,1392,234.7L1440,224L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>
-  </div>
-
-  <div class="content">
-    <div class="content-block container">
-      <div class="row">
-        <div class="col-12" id="catchcopy"><h1>はじめてサウナも、お気軽サウナも、日常サウナも。</h1></div>
-      </div>
-      <div class="row">
-        <div class="col-12" id="subcatchcopy"><h4>銭湯サウナ入門ガイドブック</h4></div>
-      </div>
-      <div class="row">
-        <div class="col-sm">
-          <p class="blur balloon-left">サウナってよく聞くしちょっと興味はあるけど、一部の熱狂的な人たちだけで盛り上がってるイメージがあるし、サウナ施設で粗相したら怖い。</p>
-          <p class="blur balloon-right">たまには足を伸ばしてお風呂につかりたいなと思う時はあるけど、銭湯って設備も古いし常連ルールとかありそうだし、結局自宅でお湯貯めて入っちゃう。銭湯は子供の頃に家族で入ったのが最後かな。</p>
-          <p class="blur balloon-left">サウナは好きだけど、結構お金かかるよね。この頃は料金の値上げもよく聞くし。毎週何回も行ってる人とかもいるみたいだけど良く行けるなあ。</p>
-        </div>
-        <div class="col-sm normal">
-          <p>こんな感想を持つ方、案外多いんじゃないでしょうか。
-          <p>そんなあなたに贈る、銭湯サウナ入門ガイドブックです。板橋区にある、サウナがある銭湯のレビューも併せて掲載。</p>
-          <p class="margin"></p>
-          <p>世は空前のサウナブーム。</p>
-          <p>対照的に、銭湯は燃料の高騰や来客数減少で休業や廃業となる施設が増えています。</p>
-          <p>銭湯とサウナを、もっと気軽に。もっと日常に。そんな風に感じてくれることを願って。</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
--->
-
-<!--
-
-
-<div class="delimiter deep">
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#444444" fill-opacity="1" d="M0,128L48,138.7C96,149,192,171,288,197.3C384,224,480,256,576,224C672,192,768,96,864,96C960,96,1056,192,1152,229.3C1248,267,1344,245,1392,234.7L1440,224L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>
-</div>
-
-<div class="information">
-  <div class="container">
-    <div class="row">
-      <div class="col-xl-3">
-        <h1 class="booktitle">銭湯でサウナ</h1>
-        <p class="margin"></p>
-        <h4>コミックマーケット 101<br />2022.12.31(日) (2日目)</h4>
-        <p class="margin"></p>
-        <h4>東5ホール ヘ07ab<br />Circle's Square + suntrap notes.</h4>
-        にて委託頒布予定
-        <p>その他、通販サイトにて販売かも...?</p>
-        <table class="table table-sm table-borderless">
-          <thead>
-            <tr><td>発行</td><td>ponytail drops</td><td><a href="https://ponytail-drops.com" target="_blank"><img class="home" src="./img/home.svg" alt="home"></a><a href="https://twitter.com/ponytail-drops" target="_blank"><img class="twitter" src="./img/twitter.svg" alt="twitter"></a></td></tr>
-            <tr><td>コンテンツ本文/デザイン</td><td>MAGAWO</td><td><a href="https://twitter.com/magawo1124" target="_blank"><img class="twitter" src="./img/twitter.svg" alt="twitter"></a>
-            <tr><td>表紙イラスト</td><td>はやうお</td><td><a href="https://twitter.com/odds0310" target="_blank"><img class="twitter" src="./img/twitter.svg" alt="twitter"></a></td></tr>
-            <tr><td>表紙/裏表紙デザイン</td><td>みなみ</td><td><a href="https://twitter.com/minami_orzoooo" target="_blank"><img class="twitter" src="./img/twitter.svg" alt="twitter"></a></td></tr>
-          </tbody>
-        </table>
-      </div>
-      <div class="col-xl-9" >
-        <img src="./img/cover.webp" class="cover" alt="cover">
-        </p>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="footer">
-  <div class="container">
-    <div class="row">
-      <div class="col center">
-        <p><img class="ponytaildrops_logo" src="./img/ponytaildrops_logo.svg"></p>
-        <p>Copyright (c) 2022 ponytail drops All Rights Reserved.</p>
-      </div>
-    </div>
-  </div>
-</div>
-
--->
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 <script src="https://code.jquery.com/jquery-3.6.3.slim.js" integrity="sha256-DKU1CmJ8kBuEwumaLuh9Tl/6ZB6jzGOBV/5YpNE2BWc=" crossorigin="anonymous"></script>
 <script>
+
+document.body.addEventListener('touchmove', (e) => {
+  if (e.touches.length > 1) {
+    e.preventDefault();
+  }
+}, {passive: false});
+
+
 window.onload = ()=>{
     const loader = document.getElementById('loader');
     loader.classList.add('loaded');
@@ -588,46 +523,6 @@ window.onload = ()=>{
     h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
   })(document);
 
-/*
-$('div.bg-top').each(function () {
-  var $win = $(window),
-      $winH = $win.height(),
-      $connect = $(this),
-      position = $connect.offset().top,
-      current = 0,
-      scroll;
-  $win.on('load scroll', function () {
-    scroll = $win.scrollTop();
-    current = ( 1 + (position - scroll) / $winH);
-    if (current < 0.2) {
-      current = 0.2;
-    }
-    if (scroll > position - $winH) {
-      $connect.css({opacity: current});
-    }
-  });
-});
-
-$('div.bg-content').each(function () {
-  var $win = $(window),
-      $winH = $win.height(),
-      $connect = $(this),
-      position = $connect.offset().top,
-      current = 0,
-      scroll;
-  $win.on('load scroll', function () {
-    scroll = $win.scrollTop();
-    current = ((position - scroll) / $winH);
-    if (current < 0.2) {
-      current = 0.2;
-    }
-    if (scroll > position - $winH) {
-      $connect.css({opacity: current});
-    }
-  });
-});
-
-*/
 </script>
 </body>
 </html>
