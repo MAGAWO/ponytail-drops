@@ -27,28 +27,86 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
 <style>
-.bg-image {
+
+.section {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+}
+
+.section-inner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.section-image {
+  position: fixed;
   top: 0;
   left: 0;
   z-index: -1;
-  background-position: right top;
-  background-repeat: no-repeat;
+  display: block;
+  width: 100vw;
+  height: 100vh;
   background-size: cover;
-  background-attachment: fixed;
+  background-position: bottom right;
   background-image: url('./img/top.webp');
-  position: relative;
 }
 
+.Section-Content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 32px;
+}
+
+.Section-Text {
+  width: 100%;
+  max-width: 800px;
+  height: 100%;
+  padding: 32px;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.OtherSection {
+  width: 100%;
+  height: 600px;
+  background-color: lightgray;
+}
+
+.bg-image {
+  width: 100%;
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-position: bottom right;
+  background-image: url('./img/top.webp');
+  background-size: cover;
+  position: fixed;
+}
+
+/*
 .bg-image::before {
   content: "";
   display: block;
   position: fixed;
+  top: 0;
+  left: 0;
   z-index: -1;
+  width: 100%;
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-position: bottom right;
+  background-image: url('./img/top.webp');
+  background-size: cover;
 }
+
+*/
 
 .top {
   height: 100vh;
-  margin-bottom: -10px;
 }
 
 .logo img {
@@ -59,37 +117,24 @@
     width: calc(20vw + 100px);
 }
 
-.bg-content {
-  background-image: url('./img/top.webp');
-  background-position: right top;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
-  height: 100vh;
-  position: relative;
-}
-
-.content {
-  padding-bottom: 0;
-}
-
 .content::after {
   content: '';
   background-color: #2ea7e0;
-  opacity: 0.65;
-  position: absolute;
+  opacity: 0.7;
+  position: relative;
   left: 0;
   right: 0;
-  top: 0;
+  top: 100vh;
   bottom: 0;
+  z-index: -1;
 }
 
-.content .content-block{
+.content .content-block {
   color: #f0f0f0;
   font-size: clamp(11pt, 13pt, 15pt);
   position: relative;
   font-family: Zen Maru Gothic, sans-serif;
-  z-index: 1;
+  z-index: 1000;
 }
 
 .content .balloon-left {
@@ -156,6 +201,7 @@
   margin-bottom: 5%;
 }
 
+/*
 .delimiter.deep::before {
   content: '';
   background-color: #2ea7e0;
@@ -167,6 +213,7 @@
   bottom: 0;
   z-index: 1;
 }
+*/
 
 .information {
   margin-top: -1px;
@@ -401,46 +448,85 @@
   </div>
 </div>
 
+    <section class="section">
+      <div class="section-inner">
+        <div class="section-image"></div>
+        <div class="Section-Content">
+        </div>
+      </div>
+    </section>
+    <section class="section">
+      <div class="section-inner">
+        <div class="section-image"></div>
+        <div class="Section-Content">
+          <div class="Section-Text">
+            ダミーテキストダミーテキストダミーテキストダミーテキストダミーテキスト
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section">
+      <div class="section-inner">
+        <div class="section-image"></div>
+        <div class="Section-Content">
+          <div class="Section-Text">
+            ダミーテキストダミーテキストダミーテキストダミーテキストダミーテキスト
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="OtherSection"></section>
+    
+<!--
+<div class="Firstview">FirstView</div>
+-->
 
-<div class="bg-image top">
+<!--
+<div class="bg-image">
+  <div class="top">
 
-  <div class="logo">
-    <img src="./img/logo.svg">
+    <div class="logo">
+      <img src="./img/logo.svg">
+    </div>
+
   </div>
 
-</div>
+  <div class="delimiter">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#2ea7e0" fill-opacity="0.65" d="M0,128L48,138.7C96,149,192,171,288,197.3C384,224,480,256,576,224C672,192,768,96,864,96C960,96,1056,192,1152,229.3C1248,267,1344,245,1392,234.7L1440,224L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>
+  </div>
 
-<div class="bg-image delimiter">
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#2ea7e0" fill-opacity="0.65" d="M0,128L48,138.7C96,149,192,171,288,197.3C384,224,480,256,576,224C672,192,768,96,864,96C960,96,1056,192,1152,229.3C1248,267,1344,245,1392,234.7L1440,224L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>
-</div>
-
-<div class="bg-image content">
-  <div class="content-block container">
-    <div class="row">
-      <div class="col-12" id="catchcopy"><h1>はじめてサウナも、お気軽サウナも、日常サウナも。</h1></div>
-    </div>
-    <div class="row">
-      <div class="col-12" id="subcatchcopy"><h4>銭湯サウナ入門ガイドブック</h4></div>
-    </div>
-    <div class="row">
-      <div class="col-sm">
-        <p class="blur balloon-left">サウナってよく聞くしちょっと興味はあるけど、一部の熱狂的な人たちだけで盛り上がってるイメージがあるし、サウナ施設で粗相したら怖い。</p>
-        <p class="blur balloon-right">たまには足を伸ばしてお風呂につかりたいなと思う時はあるけど、銭湯って設備も古いし常連ルールとかありそうだし、結局自宅でお湯貯めて入っちゃう。銭湯は子供の頃に家族で入ったのが最後かな。</p>
-        <p class="blur balloon-left">サウナは好きだけど、結構お金かかるよね。この頃は料金の値上げもよく聞くし。毎週何回も行ってる人とかもいるみたいだけど良く行けるなあ。</p>
+  <div class="content">
+    <div class="content-block container">
+      <div class="row">
+        <div class="col-12" id="catchcopy"><h1>はじめてサウナも、お気軽サウナも、日常サウナも。</h1></div>
       </div>
-      <div class="col-sm normal">
-        <p>こんな感想を持つ方、案外多いんじゃないでしょうか。
-        <p>そんなあなたに贈る、銭湯サウナ入門ガイドブックです。板橋区にある、サウナがある銭湯のレビューも併せて掲載。</p>
-        <p class="margin"></p>
-        <p>世は空前のサウナブーム。</p>
-        <p>対照的に、銭湯は燃料の高騰や来客数減少で休業や廃業となる施設が増えています。</p>
-        <p>銭湯とサウナを、もっと気軽に。もっと日常に。そんな風に感じてくれることを願って。</p>
+      <div class="row">
+        <div class="col-12" id="subcatchcopy"><h4>銭湯サウナ入門ガイドブック</h4></div>
+      </div>
+      <div class="row">
+        <div class="col-sm">
+          <p class="blur balloon-left">サウナってよく聞くしちょっと興味はあるけど、一部の熱狂的な人たちだけで盛り上がってるイメージがあるし、サウナ施設で粗相したら怖い。</p>
+          <p class="blur balloon-right">たまには足を伸ばしてお風呂につかりたいなと思う時はあるけど、銭湯って設備も古いし常連ルールとかありそうだし、結局自宅でお湯貯めて入っちゃう。銭湯は子供の頃に家族で入ったのが最後かな。</p>
+          <p class="blur balloon-left">サウナは好きだけど、結構お金かかるよね。この頃は料金の値上げもよく聞くし。毎週何回も行ってる人とかもいるみたいだけど良く行けるなあ。</p>
+        </div>
+        <div class="col-sm normal">
+          <p>こんな感想を持つ方、案外多いんじゃないでしょうか。
+          <p>そんなあなたに贈る、銭湯サウナ入門ガイドブックです。板橋区にある、サウナがある銭湯のレビューも併せて掲載。</p>
+          <p class="margin"></p>
+          <p>世は空前のサウナブーム。</p>
+          <p>対照的に、銭湯は燃料の高騰や来客数減少で休業や廃業となる施設が増えています。</p>
+          <p>銭湯とサウナを、もっと気軽に。もっと日常に。そんな風に感じてくれることを願って。</p>
+        </div>
       </div>
     </div>
   </div>
 </div>
+-->
 
-<div class="bg-image delimiter deep">
+<!--
+
+
+<div class="delimiter deep">
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#444444" fill-opacity="1" d="M0,128L48,138.7C96,149,192,171,288,197.3C384,224,480,256,576,224C672,192,768,96,864,96C960,96,1056,192,1152,229.3C1248,267,1344,245,1392,234.7L1440,224L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>
 </div>
 
@@ -482,6 +568,8 @@
     </div>
   </div>
 </div>
+
+-->
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 <script src="https://code.jquery.com/jquery-3.6.3.slim.js" integrity="sha256-DKU1CmJ8kBuEwumaLuh9Tl/6ZB6jzGOBV/5YpNE2BWc=" crossorigin="anonymous"></script>
