@@ -3,7 +3,6 @@
 <head>
 <title>銭湯でサウナ | ponytail drops</title>
 <meta charset="UTF-8">
-<meta name="robots" content="noindex,nofollow">
 <meta name="description" content="銭湯にあるサウナのハウツー本。サウナ入門や銭湯にあるサウナの特徴、板橋区のサウナがある銭湯の紹介。C101(2022年冬コミ) にて頒布予定" />
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta property="og:site_name" content="銭湯でサウナ | ponytail drops" />
@@ -28,7 +27,7 @@
 .section-top {
   position: relative;
   width: 100%;
-  height: 80vh;
+  height: calc( var(--vh) * 80 );
 }
 
 .section-main {
@@ -51,7 +50,7 @@
   z-index: -1;
   display: block;
   width: 100vw;
-  height: 100vh;
+  height: calc( var(--vh) * 100 );
   background-size: cover;
   background-position: top right;
   background-image: url('./img/top.webp');
@@ -64,7 +63,7 @@
 }
 
 .section-margin {
-  margin-top: 20vh;
+  margin-top: calc( var(--vh) * 20 );
 }
 
 .section-text {
@@ -78,7 +77,7 @@
 .logo img {
   position: absolute;
   margin: auto;
-  bottom : 10vh;
+  bottom : calc( var(--vh) * 10 );
   left: 15vw;
   width: calc(20vw + 100px);
 }
@@ -86,7 +85,7 @@
 .pdlogo-top img {
   position: absolute;
   margin: auto;
-  top: 2vh;
+  top: calc( var(--vh) * 2 );
   right: 2vw;
   width: 30vw;
   max-width: 200px;
@@ -152,6 +151,21 @@
   margin-bottom: 10%;
 }
 
+.content-block p.emergency {
+  font-size: clamp(11pt, 12pt, 14pt);
+  color: #eed26e;
+  margin: 0;
+}
+
+.content-block table td.middle {
+  vertical-align: middle;
+}
+
+.content-block table img {
+  width: 50px;
+  margin-right: 20px;
+}
+
 #catchcopy {
   font-family: mutsuki, dnp-shuei-ymincho-std, sans-serif;
   font-weight: 500;
@@ -171,18 +185,19 @@
   font-size: clamp(11pt, 13pt, 15pt);
   font-family: Zen Maru Gothic, sans-serif;
   padding-top: 5px;
-  padding-bottom: 10vh;
+  padding-bottom: calc( var(--vh) * 10 );
   margin-top: -1px;
 }
 
 .information p.margin{
-  margin-bottom: 3vh;
+  margin-bottom: calc( var(--vh) * 3 );;
 }
 
 .information img.sample {
   width: 100%;
-  border: 2px solid #2ea7e0;
+  border: 3px solid #3a4d9e;
   border-radius: 15px;
+  margin-bottom: 20px;
 }
 
 .information .table {
@@ -272,7 +287,7 @@
 
 .logo {
     position: relative;
-    height: 100vh;
+    height: calc( var(--vh) * 100 );;
 }
 
 @keyframes steam_Move {
@@ -317,7 +332,7 @@
 #loader {
   position: fixed;
   width: 100vw;
-  height: 102vh;
+  height: calc( var(--vh) * 102 );;
   transition: all 1s;
   background-image: linear-gradient( 135deg, #ef801b 10%, #e73717 100%);
   z-index: 1000;
@@ -448,6 +463,8 @@
               <p>世は空前のサウナブーム。</p>
               <p>対照的に、銭湯は燃料の高騰や来客数減少で休業や廃業となる施設が増えています。</p>
               <p>銭湯とサウナを、もっと気軽に。もっと日常に。そんな風に感じてくれることを願って。</p>
+              <p class="margin"></p>
+              <table table-borderless"><tbody><tr><td class="middle"><img src="./img/exclamation.svg"></td><td><p class="emergency">大変心苦しいのですが、本誌はメインの読者層を東京近郊に住んでいる男性としております。銭湯の数は都道府県別でかなり偏りがございます。また、筆者は男性ですのであくまで男性視点でのレビュー本になります。</p></td></tr></tbody></table></p>
             </div>
           </div>
         </div>
@@ -469,7 +486,7 @@
                 <p>にて委託頒布予定<br />
                 その他、通販サイトにて販売かも...?</p>
                 <table class="table table-sm table-borderless">
-                  <thead>
+                  <tbody>
                     <tr><td class="right">発行</td><td>ponytail drops <a href="https://ponytail-drops.com" target="_blank"><img class="home" src="./img/home.svg" alt="home"></a><a href="https://twitter.com/ponytail-drops" target="_blank"><img class="twitter" src="./img/twitter.svg" alt="twitter"></a></td></tr>
                     <tr><td class="right">コンテンツ本文<br />コンテンツデザイン</td><td>MAGAWO <a href="https://twitter.com/magawo1124" target="_blank"><img class="twitter" src="./img/twitter.svg" alt="twitter"></a></td></tr>
                     <tr><td class="right">表紙イラスト</td><td>はやうお <a href="https://twitter.com/odds0310" target="_blank"><img class="twitter" src="./img/twitter.svg" alt="twitter"></a></td></tr>
@@ -521,6 +538,9 @@ window.onload = ()=>{
     },
     h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
   })(document);
+
+var height=window.innerHeight;
+document.documentElement.style.setProperty( '--vh', height/100 + 'px');
 
 </script>
 </body>
