@@ -1,6 +1,550 @@
-<html>
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<title>銭湯でサウナ | ponytail drops</title>
+<meta charset="UTF-8">
+<meta name="description" content="銭湯にあるサウナのハウツー本。サウナ入門や銭湯にあるサウナの特徴、板橋区のサウナがある銭湯の紹介。C101(2022年冬コミ) にて頒布予定" />
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta property="og:site_name" content="銭湯でサウナ | ponytail drops" />
+<meta property="og:title" content="銭湯でサウナ | ponytail drops" />
+<meta property="og:description" content="銭湯にあるサウナのハウツー本。サウナ入門や銭湯にあるサウナの特徴、板橋区のサウナがある銭湯の紹介。C101(2022年冬コミ) にて頒布予定" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://ponytail-drops.com/" />
+<meta property="og:image" content="https://ponytail-drops.com/img/cover.webp" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@ponytail-drops" />
+<meta name="twitter:title" content="銭湯サウナ | ponytail drops" />
+<meta name="twitter:description" content="銭湯にあるサウナのハウツー本。サウナ入門や銭湯にあるサウナの特徴、板橋区のサウナがある銭湯の紹介。C101(2022年冬コミ)、各種通販サイトにて頒布予定" />
+<meta name="twitter:image" content="https://ponytail-drops.com/img/cover.webp" />
+<meta name="apple-mobile-web-app-title" content="銭湯でサウナ">
+<meta name="theme-color" content="black">
+<!--link rel="favicon"-->
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+<style>
+
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        display: none;
+        opacity: 0;
+        z-index: -1;
+    }
+}
+
+#loader {
+  position: fixed;
+  width: 100vw;
+  height: calc( var(--vh) * 102 );
+  transition: all 1s;
+  background-image: linear-gradient( 135deg, #ef801b 10%, #e73717 100%);
+  z-index: 1000;
+}
+
+#loader.loaded {
+    animation: fadeOut 2s forwards;
+}
+
+.circle{
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 150px;
+    height: 150px;
+    background: #ccc;
+    border: 5px solid #2ea7e0;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.wave{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: #2ea7e0;
+    border-radius: 50%;
+    box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.5);
+}
+.wave:before,
+.wave:after
+{
+    content: '';
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -75%);
+}
+.wave:before{
+    border-radius: 45%;
+    background: rgba(255, 255, 255, 1);
+    animation: animate 5s linear infinite;
+}
+.wave:after{
+    border-radius: 40%;
+    background: rgba(255, 255, 255, .5);
+    animation: animate 10s linear infinite;
+}
+@keyframes animate{
+    0%{
+        transform: translate(-50%, -75%) rotate(0deg);
+    }
+    100%{
+        transform: translate(-50%, -75%) rotate(360deg);
+    }
+}
+
+.logo {
+    position: relative;
+    height: calc( var(--vh) * 100 );
+}
+
+.section-top {
+  position: relative;
+  width: 100%;
+  height: calc( var(--vh) * 80 );
+}
+
+.section-inner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  clip: rect(auto, auto, auto, auto);
+}
+
+.section-image {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  display: block;
+  width: 100vw;
+  height: calc( var(--vh) * 100 );
+  background-size: cover;
+  background-position: top right;
+  background-image: url('./img/top.webp');
+}
+
+.section-main {
+  position: relative;
+  width: 100%;
+}
+
+.section-content {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.section-margin {
+  margin-top: calc( var(--vh) * 20 );
+}
+
+.section-text {
+  width: 100%;
+  background-color: rgba(46, 167, 224, 0.65);
+  color: #f0f0f0;
+  font-size: clamp(11pt, 13pt, 15pt);
+  font-family: Zen Maru Gothic, sans-serif;
+}
+
+.logo img {
+  position: absolute;
+  margin: auto;
+  bottom : calc( var(--vh) * 10 );
+  left: 15vw;
+  width: calc(20vw + 100px);
+}
+
+.pdlogo-top img {
+  position: absolute;
+  margin: auto;
+  top: calc( var(--vh) * 2 );
+  right: 2vw;
+  width: 30vw;
+  max-width: 200px;
+}
+
+
+.content-block {
+  color: #f0f0f0;
+  font-size: clamp(11pt, 13pt, 15pt);
+  position: relative;
+  font-family: Zen Maru Gothic, sans-serif;
+  z-index: 1000;
+}
+
+.content-block .balloon-left {
+  position: relative;
+  display: inline-block;
+  margin: 1.5em 15% 1.5em 15px;
+  padding: 14px 20px;
+  min-width: 120px;
+  max-width: 100%;
+  background: #3a4d9e;
+  border-radius: 15px;
+}
+
+.content-block .balloon-left:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -30px;
+  margin-top: -15px;
+  border: 15px solid transparent;
+  border-right: 15px solid #3a4d9e;
+}
+
+.content-block .balloon-right {
+  position: relative;
+  display: inline-block;
+  margin: 1.5em 15px 1.5em 15%;
+  padding: 14px 20px;
+  min-width: 120px;
+  max-width: 100%;
+  background: #3a4d9e;
+  border-radius: 15px;
+}
+
+.content-block .balloon-right:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  margin-top: -15px;
+  border: 15px solid transparent;
+  border-left: 15px solid #3a4d9e;
+}
+
+.content-block .blur {
+  text-shadow: 0px 0px 15px rgba(255, 255, 255, 1);
+  font-size: clamp(11pt, 12pt, 14pt);
+}
+
+.content-block p.margin {
+  margin-bottom: 10%;
+}
+
+.content-block p.emergency {
+  font-size: clamp(11pt, 12pt, 14pt);
+  color: #eed26e;
+  margin: 0;
+}
+
+.content-block table td.middle {
+  vertical-align: middle;
+}
+
+.content-block table img {
+  width: 50px;
+  margin-right: 20px;
+}
+
+#catchcopy {
+  font-family: mutsuki, dnp-shuei-ymincho-std, sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  text-align: center;
+  margin-bottom: 2%;
+}
+
+#subcatchcopy {
+  text-align: center;
+  margin-bottom: 5%;
+}
+
+.information {
+  background-color: #2ea7e0;
+  color: #f0f0f0;
+  font-size: clamp(11pt, 13pt, 15pt);
+  font-family: Zen Maru Gothic, sans-serif;
+  padding-top: 5px;
+  padding-bottom: calc( var(--vh) * 10 );
+  margin-top: -1px;
+}
+
+.information p.margin{
+  margin-bottom: calc( var(--vh) * 3 );
+}
+
+.information img.sample {
+  width: 100%;
+  border: 3px solid #3a4d9e;
+  border-radius: 15px;
+  margin-bottom: 20px;
+}
+
+.information .table {
+  font-size: clamp(9pt, 10pt, 11pt);
+  color: #e0e0e0;
+}
+
+.information .table td.right {
+  text-align: right;
+}
+
+.information .table td {
+  vertical-align: middle;
+}
+
+.information .table img {
+  width: 20px;
+}
+
+.booktitle {
+  font-family: mutsuki, dnp-shuei-ymincho-std, sans-serif;
+}
+
+.footer {
+  padding: 50px 0 50px 0;
+  background-color: #3a4d9e;
+  color: #61C1BE;
+}
+
+.footer img.ponytaildrops_logo {
+  width: 200px;
+}
+
+.footer .center {
+  text-align: center;
+}
+
+.steam-box {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.steam1 {
+       margin-left: 50vw;
+       position: absolute;
+       -webkit-animation: steam_Move 25s infinite linear;
+       animation: steam_Move 25s infinite linear;
+       transition: all 1s;
+   }
+ 
+.steam2 {
+       margin-left: 25vw;
+       position: absolute;
+       -webkit-animation: steam_Move 15s infinite linear;
+       animation: steam_Move 15s infinite linear;
+       animation-delay: -10s;
+       transition: all 1s;
+   }
+
+.steam3 {
+       margin-left: 0vw;
+       position: absolute;
+       -webkit-animation: steam_Move 10s infinite linear;
+       animation: steam_Move 10s infinite linear;
+       animation-delay: -45s;
+       transition: all 1s;
+   }
+ 
+.steam4 {
+       margin-left: 75vw;
+       position: absolute;
+       -webkit-animation: steam_Move 20s infinite linear;
+       animation: steam_Move 20s infinite linear;
+       animation-delay: -50s;
+       transition: all 1s;
+   }
+
+.steam-box img {
+    width: 150%;
+}
+
+
+@keyframes steam_Move {
+     0% {
+        filter: blur(25px);
+        transform: rotateY(0deg);
+        transform: scale(1, 1);
+        opacity: 0;
+        top: 50%;
+    }
+    33% {
+        filter: blur(50px);
+        transform: rotateY(40deg);
+        transform: scale(0.6, 1.2);
+        opacity: 0.5;
+    }
+    66% {
+        transform: rotateY(2deg);
+        transform: scaleY(1.2, 0.4);
+        opacity: 0.4
+    }
+    100% {
+        filter: blur(30px);
+        transform: rotateY(50deg);
+        transform: scaleY(1.4, 1.2);
+        opacity: 0;
+        top: -600px;
+    }
+}
+
+
+
+</style>
+
 <body>
-ponytail-drops<br />
-push test
+<div id="loader">
+  <div class="circle">
+    <div class="wave">
+    </div>
+  </div>
+</div>
+
+<div class="steam-box">
+  <div class="steam1">
+    <img src="./img/steam01.svg" alt="">
+  </div>
+
+  <div class="steam2">
+    <img src="./img/steam02.svg" alt="">
+  </div>
+
+  <div class="steam3">
+    <img src="./img/steam01.svg" alt="">
+  </div>
+
+  <div class="steam4">
+    <img src="./img/steam02.svg" alt="">
+  </div>
+</div>
+
+<section class="section-top">
+  <div class="section-inner">
+    <div class="section-image"></div>
+      <div class="logo"><img src="./img/logo.svg"></div>
+      <div class="pdlogo-top"><img src="./img/ponytaildrops_logo.svg"></div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section-main">
+  <div class="section-inner">
+    <div class="section-image"></div>
+    <div class="section-content">
+      <div class="section-margin"></div>
+    </div>
+    <div class="delimiter">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#2ea7e0" fill-opacity="0.65" d="M0,128L48,138.7C96,149,192,171,288,197.3C384,224,480,256,576,224C672,192,768,96,864,96C960,96,1056,192,1152,229.3C1248,267,1344,245,1392,234.7L1440,224L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>
+    </div>
+    <div class="section-content">
+      <div class="section-text">
+
+        <div class="content-block container">
+          <div class="row">
+            <div class="col-12" id="catchcopy"><h1>はじめてサウナも、お気軽サウナも、日常サウナも。</h1></div>
+          </div>
+          <div class="row">
+            <div class="col-12" id="subcatchcopy"><h4>銭湯サウナ入門ガイドブック</h4></div>
+          </div>
+          <div class="row">
+            <div class="col-sm">
+              <p class="blur balloon-left">サウナってよく聞くしちょっと興味はあるけど、一部の熱狂的な人たちだけで盛り上がってるイメージがあるし、サウナ施設で粗相したら怖い。</p>
+              <p class="blur balloon-right">たまには足を伸ばしてお風呂につかりたいなと思う時はあるけど、銭湯って設備も古いし常連ルールとかありそうだし、結局自宅でお湯貯めて入っちゃう。銭湯は子供の頃に家族で入ったのが最後かな。</p>
+              <p class="blur balloon-left">サウナは好きだけど、結構お金かかるよね。この頃は料金の値上げもよく聞くし。毎週何回も行ってる人とかもいるみたいだけど良く行けるなあ。</p>
+            </div>
+            <div class="col-sm normal">
+              <p>こんな感想を持つ方、案外多いんじゃないでしょうか。
+              <p>そんなあなたに贈る、銭湯サウナ入門ガイドブックです。板橋区にある、サウナがある銭湯のレビューも併せて掲載。</p>
+              <p class="margin"></p>
+              <p>世は空前のサウナブーム。</p>
+              <p>対照的に、銭湯は燃料の高騰や来客数減少で休業や廃業となる施設が増えています。</p>
+              <p>銭湯とサウナを、もっと気軽に。もっと日常に。そんな風に感じてくれることを願って。</p>
+              <p class="margin"></p>
+              <table table-borderless"><tbody><tr><td class="middle"><img src="./img/exclamation.svg"></td><td><p class="emergency">大変心苦しいのですが、本誌はメインの読者層を東京近郊に住んでいる男性としております。銭湯の数は都道府県別でかなり偏りがございます。また、筆者は男性ですのであくまで男性視点でのレビュー本になります。</p></td></tr></tbody></table></p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="delimiter">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#2ea7e0" fill-opacity="1" d="M0,128L48,138.7C96,149,192,171,288,197.3C384,224,480,256,576,224C672,192,768,96,864,96C960,96,1056,192,1152,229.3C1248,267,1344,245,1392,234.7L1440,224L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>
+        </div>
+        
+        <div class="information">
+          <div class="container">
+            <div class="row">
+              <div class="col-xl-3">
+                <h1 class="booktitle">銭湯でサウナ</h1>
+                <p class="margin"></p>
+                <h4>コミックマーケット 101<br />2022.12.31(日) (2日目)</h4>
+                <p class="margin"></p>
+                <h4>東5ホール ヘ07ab<br />Circle's Square + suntrap notes.</h4>
+                <p class="margin"></p>
+                <p>にて委託頒布予定<br />
+                その他、通販サイトにて販売かも...?</p>
+                <table class="table table-sm table-borderless">
+                  <tbody>
+                    <tr><td class="right">発行</td><td>ponytail drops <a href="https://ponytail-drops.com" target="_blank"><img class="home" src="./img/home.svg" alt="home"></a><a href="https://twitter.com/ponytail-drops" target="_blank"><img class="twitter" src="./img/twitter.svg" alt="twitter"></a></td></tr>
+                    <tr><td class="right">コンテンツ本文<br />コンテンツデザイン</td><td>MAGAWO <a href="https://twitter.com/magawo1124" target="_blank"><img class="twitter" src="./img/twitter.svg" alt="twitter"></a></td></tr>
+                    <tr><td class="right">表紙イラスト</td><td>はやうお <a href="https://twitter.com/odds0310" target="_blank"><img class="twitter" src="./img/twitter.svg" alt="twitter"></a></td></tr>
+                    <tr><td class="right">表紙/裏表紙<br />デザイン</td><td>みなみ <a href="https://twitter.com/minami_orzoooo" target="_blank"><img class="twitter" src="./img/twitter.svg" alt="twitter"></a></td></tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="col-xl-9" >
+                <img src="./img/cover.webp" class="sample" alt="cover">
+                <img src="./img/content1.webp" class="sample" alt="content1">
+                <img src="./img/content2.webp" class="sample" alt="content2">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer">
+          <div class="container">
+            <div class="row">
+              <div class="col center">
+                <p><img class="ponytaildrops_logo" src="./img/ponytaildrops_logo.svg"></p>
+                <p>Copyright (c) 2022 ponytail drops All Rights Reserved.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+    
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.6.3.slim.js" integrity="sha256-DKU1CmJ8kBuEwumaLuh9Tl/6ZB6jzGOBV/5YpNE2BWc=" crossorigin="anonymous"></script>
+<script>
+
+window.onload = ()=>{
+    const loader = document.getElementById('loader');
+    loader.classList.add('loaded');
+}
+
+  (function(d) {
+    var config = {
+      kitId: 'cne5hsj',
+      scriptTimeout: 3000,
+      async: true
+    },
+    h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+  })(document);
+
+var height=window.innerHeight;
+document.documentElement.style.setProperty( '--vh', height/100 + 'px');
+
+</script>
 </body>
 </html>
