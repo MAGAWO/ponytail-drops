@@ -104,54 +104,32 @@
     height: calc( var(--vh) * 100 );
 }
 
-.section-top {
-  position: relative;
-  width: 100%;
-  height: calc( var(--vh) * 80 );
-}
-
-.section-inner {
+#top {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
-  clip: rect(auto, auto, auto, auto);
-}
-
-.section-image {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: -1;
   display: block;
+  z-index: -1;
   width: 100vw;
-  height: calc( var(--vh) * 100 );
+  height: calc( var(--vh) * 100 + 320px);
   background-size: cover;
   background-position: top right;
   background-image: url('/img/top.webp');
 }
 
-.section-main {
+#contents {
+  position: absolute;
+  top: calc( var(--vh) * 100);
+  left: 0;
+  display: block;
+  width: 100%;
+  z-index: -1;
+}
+
+#introduction {
   position: relative;
-  width: 100%;
-}
-
-.section-content {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-}
-
-.section-margin {
-  margin-top: calc( var(--vh) * 20 );
-}
-
-.section-text {
-  width: 100%;
-  background-color: rgba(46, 167, 224, 0.65);
-  color: #f0f0f0;
-  font-size: clamp(11pt, 13pt, 15pt);
-  font-family: Zen Maru Gothic, sans-serif;
+  background-color: #2ea7e0;
+  margin-bottom: -2px;
 }
 
 .logo img {
@@ -171,13 +149,23 @@
   max-width: 200px;
 }
 
-
 .content-block {
   color: #f0f0f0;
   font-size: clamp(11pt, 13pt, 15pt);
   position: relative;
   font-family: Zen Maru Gothic, sans-serif;
-  z-index: 1000;
+}
+
+.emergency {
+  position: relative;
+  display: inline-block;
+  color: #000000;
+  font-size: clamp(11pt, 12pt, 14pt);
+  background-color: #e9d654;
+  border-radius: 15px;
+  padding: 14px 20px;
+  min-width: 120px;
+  max-width: 100%;
 }
 
 .content-block .balloon-left {
@@ -260,13 +248,12 @@
 }
 
 .information {
-  background-color: #2ea7e0;
+  background-color: #2e7be0;
   color: #f0f0f0;
   font-size: clamp(11pt, 13pt, 15pt);
   font-family: Zen Maru Gothic, sans-serif;
   padding-top: 5px;
   padding-bottom: calc( var(--vh) * 10 );
-  margin-top: -1px;
 }
 
 .information p.margin{
@@ -298,6 +285,7 @@
 }
 
 .booktitle {
+  font-size: clamp(30pt, 35pt, 40pt);
   font-family: mutsuki, dnp-shuei-ymincho-std, sans-serif;
 }
 
@@ -397,7 +385,7 @@
 
 
 </style>
-
+</head>
 <body>
 <div id="loader">
   <div class="circle">
@@ -405,125 +393,6 @@
     </div>
   </div>
 </div>
-
-<div class="steam-box">
-  <div class="steam1">
-    <img src="/img/steam01.svg" alt="">
-  </div>
-
-  <div class="steam2">
-    <img src="/img/steam02.svg" alt="">
-  </div>
-
-  <div class="steam3">
-    <img src="/img/steam01.svg" alt="">
-  </div>
-
-  <div class="steam4">
-    <img src="/img/steam02.svg" alt="">
-  </div>
-</div>
-
-<section class="section-top">
-  <div class="section-inner">
-    <div class="section-image"></div>
-      <div class="logo"><img src="/img/logo.svg"></div>
-      <div class="pdlogo-top"><img src="/img/ponytaildrops_logo.svg"></div>
-    </div>
-  </div>
-</section>
-
-
-<section class="section-main">
-  <div class="section-inner">
-    <div class="section-image"></div>
-    <div class="section-content">
-      <div class="section-margin"></div>
-    </div>
-    <div class="delimiter">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#2ea7e0" fill-opacity="0.65" d="M0,128L48,138.7C96,149,192,171,288,197.3C384,224,480,256,576,224C672,192,768,96,864,96C960,96,1056,192,1152,229.3C1248,267,1344,245,1392,234.7L1440,224L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>
-    </div>
-    <div class="section-content">
-      <div class="section-text">
-
-        <div class="content-block container">
-          <div class="row">
-            <div class="col-12" id="catchcopy"><h1>はじめてサウナも、お気軽サウナも、日常サウナも。</h1></div>
-          </div>
-          <div class="row">
-            <div class="col-12" id="subcatchcopy"><h4>銭湯サウナ入門ガイドブック</h4></div>
-          </div>
-          <div class="row">
-            <div class="col-sm">
-              <p class="blur balloon-left">サウナってよく聞くしちょっと興味はあるけど、一部の熱狂的な人たちだけで盛り上がってるイメージがあるし、サウナ施設で粗相したら怖い。</p>
-              <p class="blur balloon-right">たまには足を伸ばしてお風呂につかりたいなと思う時はあるけど、銭湯って設備も古いし常連ルールとかありそうだし、結局自宅でお湯貯めて入っちゃう。銭湯は子供の頃に家族で入ったのが最後かな。</p>
-              <p class="blur balloon-left">サウナは好きだけど、結構お金かかるよね。この頃は料金の値上げもよく聞くし。毎週何回も行ってる人とかもいるみたいだけど良く行けるなあ。</p>
-            </div>
-            <div class="col-sm normal">
-              <p>こんな感想を持つ方、案外多いんじゃないでしょうか。
-              <p>そんなあなたに贈る、銭湯サウナ入門ガイドブックです。板橋区にある、サウナがある銭湯のレビューも併せて掲載。</p>
-              <p class="margin"></p>
-              <p>世は空前のサウナブーム。</p>
-              <p>対照的に、銭湯は燃料の高騰や来客数減少で休業や廃業となる施設が増えています。</p>
-              <p>銭湯とサウナを、もっと気軽に。もっと日常に。そんな風に感じてくれることを願って。</p>
-              <p class="margin"></p>
-              <table table-borderless"><tbody><tr><td class="middle"><img src="/img/exclamation.svg"></td><td><p class="emergency">大変心苦しいのですが、本誌はメインの読者層を東京近郊に住んでいる男性としております。銭湯の数は都道府県別でかなり偏りがございます。また、筆者は男性ですのであくまで男性視点でのレビュー本になります。</p></td></tr></tbody></table></p>
-            </div>
-          </div>
-        </div>
-        
-        <div class="delimiter">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#2ea7e0" fill-opacity="1" d="M0,128L48,138.7C96,149,192,171,288,197.3C384,224,480,256,576,224C672,192,768,96,864,96C960,96,1056,192,1152,229.3C1248,267,1344,245,1392,234.7L1440,224L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>
-        </div>
-        
-        <div class="information">
-          <div class="container">
-            <div class="row">
-              <div class="col-xl-3">
-                <h1 class="booktitle">銭湯でサウナ</h1>
-                <p class="margin"></p>
-                <h4>コミックマーケット 101<br />2022.12.31(日) (2日目)</h4>
-                <p class="margin"></p>
-                <h4>東5ホール ヘ07ab<br />Circle's Square + suntrap notes.</h4>
-                <p class="margin"></p>
-                <p>イベント頒布予定価格 600円</p>
-                <p>にて委託頒布予定</p>
-                </p>その他、通販サイトにて販売かも...?</p>
-                <table class="table table-sm table-borderless">
-                  <tbody>
-                    <tr><td class="right">発行</td><td>ponytail drops <a href="https://ponytail-drops.com" target="_blank"><img class="home" src="/img/home.svg" alt="home"></a><a href="https://twitter.com/ponytail_drops" target="_blank"><img class="twitter" src="/img/twitter.svg" alt="twitter"></a></td></tr>
-                    <tr><td class="right">コンテンツ<br />本文/デザイン</td><td>MAGAWO <a href="https://twitter.com/magawo1124" target="_blank"><img class="twitter" src="/img/twitter.svg" alt="twitter"></a></td></tr>
-                    <tr><td class="right">表紙イラスト</td><td>はやうお <a href="https://twitter.com/odds0310" target="_blank"><img class="twitter" src="/img/twitter.svg" alt="twitter"></a></td></tr>
-                    <tr><td class="right">表紙/裏表紙<br />デザイン</td><td>みなみ <a href="https://twitter.com/minami_orzoooo" target="_blank"><img class="twitter" src="/img/twitter.svg" alt="twitter"></a></td></tr>
-                  </tbody>
-                </table>
-              </div>
-              <div class="col-xl-9" >
-                <img src="/img/cover.jpg" class="sample" alt="cover">
-                <img src="/img/content1.webp" class="sample" alt="content1">
-                <img src="/img/content2.webp" class="sample" alt="content2">
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="footer">
-          <div class="container">
-            <div class="row">
-              <div class="col center">
-                <p><img class="ponytaildrops_logo" src="/img/ponytaildrops_logo.svg"></p>
-                <p>Copyright (c) 2022 ponytail drops All Rights Reserved.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </div>
-</section>
-    
-
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 <script src="https://code.jquery.com/jquery-3.6.3.slim.js" integrity="sha256-DKU1CmJ8kBuEwumaLuh9Tl/6ZB6jzGOBV/5YpNE2BWc=" crossorigin="anonymous"></script>
@@ -547,5 +416,114 @@ var height=window.innerHeight;
 document.documentElement.style.setProperty( '--vh', height/100 + 'px');
 
 </script>
+
+<div class="steam-box">
+  <div class="steam1">
+    <img src="/img/steam01.svg" alt="">
+  </div>
+
+  <div class="steam2">
+    <img src="/img/steam02.svg" alt="">
+  </div>
+
+  <div class="steam3">
+    <img src="/img/steam01.svg" alt="">
+  </div>
+
+  <div class="steam4">
+    <img src="/img/steam02.svg" alt="">
+  </div>
+</div>
+
+<div id="top">
+  <div class="logo"><img src="/img/logo.svg" /></div>
+  <div class="pdlogo-top"><img src="/img/ponytaildrops_logo.svg" /></div>
+</div>
+
+<div id="contents">
+  <div class="delimiter">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" style="margin-bottom: -2px;"><path fill="#2ea7e0" fill-opacity="1" d="M0,128L48,138.7C96,149,192,171,288,197.3C384,224,480,256,576,224C672,192,768,96,864,96C960,96,1056,192,1152,229.3C1248,267,1344,245,1392,234.7L1440,224L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>
+  </div>
+
+  <div id="introduction">
+    <div class="content-block container">
+      <div class="row">
+        <div class="col-12" id="catchcopy"><h1>はじめてサウナも、お気軽サウナも、日常サウナも。</h1></div>
+      </div>
+      <div class="row">
+        <div class="col-12" id="subcatchcopy"><h4>銭湯サウナ入門ガイドブック</h4></div>
+      </div>
+      <div class="row">
+        <div class="col-sm">
+          <p class="blur balloon-left">サウナってよく聞くしちょっと興味はあるけど、一部の熱狂的な人たちだけで盛り上がってるイメージがあるし、サウナ施設で粗相したら怖い。</p>
+          <p class="blur balloon-right">たまには足を伸ばしてお風呂につかりたいなと思う時はあるけど、銭湯って設備も古いし常連ルールとかありそうだし、結局自宅でお湯貯めて入っちゃう。銭湯は子供の頃に家族で入ったのが最後かな。</p>
+          <p class="blur balloon-left">サウナは好きだけど、結構お金かかるよね。この頃は料金の値上げもよく聞くし。毎週何回も行ってる人とかもいるみたいだけど良く行けるなあ。</p>
+        </div>
+        <div class="col-sm normal">
+          <p>こんな感想を持つ方、案外多いんじゃないでしょうか。</p>
+          <p>そんなあなたに贈る、銭湯サウナ入門ガイドブックです。板橋区にある、サウナがある銭湯のレビューも併せて掲載。</p>
+          <p class="margin"></p>
+          <p>世は空前のサウナブーム。</p>
+          <p>対照的に、銭湯は燃料の高騰や来客数減少で休業や廃業となる施設が増えています。</p>
+          <p>銭湯とサウナを、もっと気軽に。もっと日常に。そんな風に感じてくれることを願って。</p>
+          <p class="margin"></p>
+          <div class="emergency">
+            <table class="table-borderless">
+              <tbody><tr>
+                <td class="middle"><img src="/img/exclamation.svg"></td>
+                <td>大変心苦しいのですが、本誌はメインの読者層を東京近郊に住んでいる男性としております。銭湯の数は都道府県別でかなり偏りがございます。また、筆者は男性ですのであくまで男性視点でのレビュー本になります。</td>
+              </tr></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="delimiter" style="padding-bottom: -10px;">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" style="margin-bottom: -2px;"><path fill="#2e7be0" fill-opacity="1" d="M0,128L48,138.7C96,149,192,171,288,197.3C384,224,480,256,576,224C672,192,768,96,864,96C960,96,1056,192,1152,229.3C1248,267,1344,245,1392,234.7L1440,224L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>
+    </div>
+  </div>
+
+  <div class="information">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4">
+          <h1 class="booktitle">銭湯でサウナ</h1>
+          <p class="margin"></p>
+          <h4>コミックマーケット 101<br />2022.12.31(日) (2日目)</h4>
+          <p class="margin"></p>
+          <h4>東5ホール ヘ07ab<br />Circle's Square + suntrap notes.</h4>
+          <p class="margin"></p>
+          <p>イベント頒布予定価格 600円</p>
+          <p>にて委託頒布予定</p>
+          <p>その他、通販サイトにて販売かも...?</p>
+          <table class="table table-sm table-borderless">
+            <tbody>
+              <tr><td class="right">発行</td><td>ponytail drops <a href="https://ponytail-drops.com" target="_blank"><img class="home" src="/img/home.svg" alt="home"></a><a href="https://twitter.com/ponytail_drops" target="_blank"><img class="twitter" src="/img/twitter.svg" alt="twitter"></a></td></tr>
+              <tr><td class="right">コンテンツ<br />本文/デザイン</td><td>MAGAWO <a href="https://twitter.com/magawo1124" target="_blank"><img class="twitter" src="/img/twitter.svg" alt="twitter"></a></td></tr>
+              <tr><td class="right">表紙イラスト</td><td>はやうお <a href="https://twitter.com/odds0310" target="_blank"><img class="twitter" src="/img/twitter.svg" alt="twitter"></a></td></tr>
+              <tr><td class="right">表紙/裏表紙<br />デザイン</td><td>みなみ <a href="https://twitter.com/minami_orzoooo" target="_blank"><img class="twitter" src="/img/twitter.svg" alt="twitter"></a></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="col-lg-8" >
+          <img src="/img/cover.jpg" class="sample" alt="cover">
+          <img src="/img/content1.webp" class="sample" alt="content1">
+          <img src="/img/content2.webp" class="sample" alt="content2">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col center">
+          <p><img class="ponytaildrops_logo" src="/img/ponytaildrops_logo.svg"></p>
+          <p>Copyright (c) 2022 ponytail drops All Rights Reserved.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 </body>
 </html>
