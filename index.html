@@ -304,6 +304,16 @@
   text-align: center;
 }
 
+.footer p.margin{
+  margin-bottom: calc( var(--vh) * 2 );
+}
+
+.footer a {
+  text-decoration: none;
+  color: #61C1BE;
+  margin-left: 10px;
+}
+
 .steam-box {
   position: fixed;
   top: 0;
@@ -516,6 +526,17 @@ document.documentElement.style.setProperty( '--vh', height/100 + 'px');
   </div>
   <div class="footer">
     <div class="container">
+      <div class="row">
+        <div class="col center messages">
+          <p>ご意見、ご感想はこちら。</p>
+          <p>
+            <a href="https://marshmallow-qa.com/ponytail_drops" target="_blank"><img alt="marshmallow" width="28" height="28" src="/img/marshmallow.png">マシュマロ</a>
+            <a href="https://peing.net/ja/ponytail_drops" target="_blank"><img alt="peing" width="28" height="28" src="/img/peing.png">質問箱</a> 
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSdNlwdzyv6fWEXjpZlQWcRdXCK-lIrUPd_Q8YfUT4hB50ghmw/viewform" target="_blank"><img alt="googleforms" width="28" height="28" src="/img/googleforms.svg">Googleフォーム</a>
+          </p>
+          <p class="margin"></p>
+        </div>
+      </div>
       <div class="row">
         <div class="col center">
           <p><img class="ponytaildrops_logo" src="/img/ponytaildrops_logo.svg"></p>
