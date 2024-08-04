@@ -349,6 +349,31 @@ strong.color5{
   font-family: "corporate-logo-ver2", sans-serif;
 }
 
+.backno {
+  font-size: clamp(30pt, 35pt, 40pt);
+  font-family: "corporate-logo-ver2", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  margin-top: 100px;
+}
+
+.linkbox {
+  position: relative;
+}
+
+.linkbox a {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  height: 100%;
+}
+
+.linkbox a:hover {
+  opacity: 0.1;
+  background-color: #000000;
+}
+
 .footer {
   padding: 50px 0 50px 0;
   background-color: #3a4d9e;
@@ -569,17 +594,8 @@ document.documentElement.style.setProperty( '--vh', height/100 + 'px');
           <h1 class="booktitle">銭湯でサウナ</h1>
           <p class="booksubtitle">vol.2 東京都 中野区編</p>
           <p class="margin"></p>
-<<<<<<< HEAD
-          <h4>各種通販サイト、店舗にて頒布中</h4>
-          <a class="store btn btn-danger" href="https://ponytail-drops.booth.pm/items/4466531" target="_blank" role="button">BOOTH</a>
-          <a class="store btn btn-danger" href="https://www.melonbooks.co.jp/detail/detail.php?product_id=1815281" target="_blank" role="button">Melonbooks</a>
-          <a class="store btn btn-danger disabled" href="#" target="_blank" role="button">COMIC ZIN(準備中)</a>
-          <p class="margin"></p>
-          <p>発行 コミックマーケット101 2022.12.31(日)</p>
-=======
           <h4>頒布情報</h4>
           <p>コミックマーケット104 2024.8.12(月)<br />2日目 東3ホール "ウ"ブロック43ab<br /><strong class="color1">Circles' Square + suntrap notes.</strong><br />にて委託頒布予定</p>
->>>>>>> 23374bc (中野編ページ作成)
           <p>イベント頒布価格 600円</p>
           <p class="margin"></p>
           <h4>各種通販サイトにて頒布予定</h4>
@@ -601,6 +617,12 @@ document.documentElement.style.setProperty( '--vh', height/100 + 'px');
           <img src="/img/nakano/thumb_contents1.webp" class="sample" alt="content1">
           <img src="/img/nakano/thumb_contents2.webp" class="sample" alt="content2">
         </div>
+      </div>
+      <h1 class="backno">バックナンバー</h1>
+      <div class="row linkbox">
+        <a href="/sento_sauna_itabashi/"></a>
+        <div class="col-lg-4"><img src="/img/cover.webp" class="sample" alt="cover"></div>
+        <div class="col-lg-8"><p><strong>銭湯でサウナ</strong><br /><span class="note">銭湯サウナ入門ガイドブック 東京都板橋区編</span></p></div>
       </div>
     </div>
   </div>
