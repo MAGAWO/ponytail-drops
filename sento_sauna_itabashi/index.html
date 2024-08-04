@@ -100,6 +100,7 @@
 }
 
 .logo {
+    position: relative;
     height: calc( var(--vh) * 100 );
 }
 
@@ -112,8 +113,8 @@
   width: 100vw;
   height: calc( var(--vh) * 125);
   background-size: cover;
-  background-position: top center;
-  background-image: url('/img/nakano/top.webp');
+  background-position: top right;
+  background-image: url('/img/top.webp');
   background-repeat: repeat-y;
 }
 
@@ -128,39 +129,23 @@
 
 #introduction {
   position: relative;
-  background-image: linear-gradient( 180deg, #ef801b 10%, #e73717 100%);
+  background-color: #2ea7e0;
   margin-bottom: -2px;
 }
 
-.logo_left img {
+.logo img {
   position: absolute;
   margin: auto;
-  bottom : calc( var(--vh) * 33 );
-  left: 1vw;
-  width: calc(6vw + 100px);
-}
-
-.logo_right img {
-  position: absolute;
-  margin: auto;
-  top : calc( var(--vh) * 2 );
-  right: 5vw;
-  width: calc(5vw + 100px);
-}
-
-.logo_nakano img {
-  position: absolute;
-  margin: auto;
-  bottom : calc( var(--vh) * 33 );
-  right: 15vw;
-  width: calc(15vw + 100px);
+  bottom : calc( var(--vh) * 10 );
+  left: 15vw;
+  width: calc(20vw + 100px);
 }
 
 .pdlogo-top img {
   position: absolute;
   margin: auto;
   top: calc( var(--vh) * 2 );
-  left: 2vw;
+  right: 2vw;
   width: 30vw;
   max-width: 200px;
 }
@@ -251,8 +236,8 @@
 }
 
 #catchcopy {
-  font-family: "corporate-logo-ver2", sans-serif;
-  font-weight: 700;
+  font-family: mutsuki, dnp-shuei-ymincho-std, sans-serif;
+  font-weight: 500;
   font-style: normal;
   text-align: center;
   margin-bottom: 2%;
@@ -261,37 +246,6 @@
 #subcatchcopy {
   text-align: center;
   margin-bottom: 5%;
-}
-
-strong {
-  font-family: "corporate-logo-ver2", sans-serif;
-  font-weight: 500;
-  font-style: normal;
-  font-size: 1.2rem;
-}
-
-strong.color1{
-  background: linear-gradient(transparent 80%, #f8ba37 70%);
-}
-
-strong.color2{
-  background: linear-gradient(transparent 80%, #cea9ce 70%);
-}
-
-strong.color3{
-  background: linear-gradient(transparent 80%, #9ed8f6 70%);
-}
-
-strong.color4{
-  background: linear-gradient(transparent 80%, #b8d560 70%);
-}
-
-strong.color5{
-  background: linear-gradient(transparent 80%, #f29ca4 70%);
-}
-
-.note {
-  font-size: 0.9rem;
 }
 
 .information {
@@ -338,15 +292,18 @@ strong.color5{
   width: 20px;
 }
 
+.information img.skima {
+  height: 50px;
+  width: auto;
+}
+
 .booktitle {
   font-size: clamp(30pt, 35pt, 40pt);
-  font-family: "corporate-logo-ver2", sans-serif;
-  font-weight: 700;
-  font-style: normal;
+  font-family: mutsuki, dnp-shuei-ymincho-std, sans-serif;
 }
 
 .booksubtitle {
-  font-family: "corporate-logo-ver2", sans-serif;
+  font-size: clamp(8pt, 10pt, 12pt);
 }
 
 .footer {
@@ -473,9 +430,9 @@ window.onload = ()=>{
     loader.classList.add('loaded');
 }
 
-(function(d) {
+  (function(d) {
     var config = {
-      kitId: 'tgs7mig',
+      kitId: 'cne5hsj',
       scriptTimeout: 3000,
       async: true
     },
@@ -506,51 +463,42 @@ document.documentElement.style.setProperty( '--vh', height/100 + 'px');
 </div>
 
 <div id="top">
-  <div class="logo">
-    <div class="logo_left"><img src="/img/nakano/logo_left.svg" /></div>
-    <div class="logo_right"><img src="/img/nakano/logo_right.svg" /></div>
-    <div class="logo_nakano"><img src="/img/nakano/logo_nakano.svg" /></div>
-  </div>
-  <div class="pdlogo-top"><img src="/img/ponytaildrops_logo_pink.svg" /></div>
+  <div class="logo"><img src="/img/logo.svg" /></div>
+  <div class="pdlogo-top"><img src="/img/ponytaildrops_logo.svg" /></div>
 </div>
 
 <div id="contents">
   <div class="delimiter">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" style="margin-bottom: -2px;"><path fill="#ef801b" fill-opacity="1" d="M0,128L48,138.7C96,149,192,171,288,197.3C384,224,480,256,576,224C672,192,768,96,864,96C960,96,1056,192,1152,229.3C1248,267,1344,245,1392,234.7L1440,224L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" style="margin-bottom: -2px;"><path fill="#2ea7e0" fill-opacity="1" d="M0,128L48,138.7C96,149,192,171,288,197.3C384,224,480,256,576,224C672,192,768,96,864,96C960,96,1056,192,1152,229.3C1248,267,1344,245,1392,234.7L1440,224L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>
   </div>
 
   <div id="introduction">
     <div class="content-block container">
       <div class="row">
-        <div class="col-12" id="catchcopy"><h1>サンプラザ、ブロードウェイ、セントラルパーク、あと銭湯サウナ。</h1></div>
+        <div class="col-12" id="catchcopy"><h1>はじめてサウナも、お気軽サウナも、日常サウナも。</h1></div>
       </div>
       <div class="row">
-        <div class="col-12" id="subcatchcopy"><h4>東京都中野区<br />銭湯サウナガイドブック</h4></div>
+        <div class="col-12" id="subcatchcopy"><h4>銭湯サウナ入門ガイドブック</h4></div>
       </div>
       <div class="row">
         <div class="col-sm">
-          <p>サウナブームでサウナの市場規模が拡大、ニューオープンやリノベーションで多種多様なサウナ施設が増加中。</p>
-          <p class="margin"></p>
-          <p>家族連れやカップルも楽しめる、スーパー銭湯にあるサウナ。</p>
-          <p>サウナー向けに特化したサウナ専用施設。</p>
-          <p>知り合いだけで気兼ねなく楽しめるプライベートサウナ。</p>
-          <p class="margin"></p>
-          <p>そして、<strong class="color1">日本の昔ながらの銭湯にあるサウナ。</strong></p>
-          <p class="margin"></p>
-          <p>銭湯もブームに合わせて来客層を広げるためリニューアルしたりサウナユーザへのサービス充実を行う施設が増えてきており、<strong class="color2">銭湯サウナにも多様性の波が訪れています。</strong></p>
+          <p class="blur balloon-left">サウナってよく聞くしちょっと興味はあるけど、一部の熱狂的な人たちだけで盛り上がってるイメージがあるし、サウナ施設で粗相したら怖い。</p>
+          <p class="blur balloon-right">たまには足を伸ばしてお風呂につかりたいなと思う時はあるけど、銭湯って設備も古いし常連ルールとかありそうだし、結局自宅でお湯貯めて入っちゃう。銭湯は子供の頃に家族で入ったのが最後かな。</p>
+          <p class="blur balloon-left">サウナは好きだけど、結構お金かかるよね。この頃は料金の値上げもよく聞くし。毎週何回も行ってる人とかもいるみたいだけど良く行けるなあ。</p>
         </div>
-        <div class="col-sm">
-          <p>本誌では、<strong class="color3">東京都中野区</strong>にある銭湯サウナを実際に利用し、その特徴や利用感を独自目線で紹介しています。</p>
-          <p>サウナレビューサイトにて人気上位の<strong class="color3">「松本湯」「アクア東中野」「えごた湯」</strong>などももちろん収録！</p>
+        <div class="col-sm normal">
+          <p>こんな感想を持つ方、案外多いんじゃないでしょうか。</p>
+          <p>そんなあなたに贈る、銭湯サウナ入門ガイドブックです。板橋区にある、サウナがある銭湯のレビューも併せて掲載。</p>
           <p class="margin"></p>
-          <p>今日疲れた<strong class="color4">ジブン</strong>に、明日から頑張らなきゃいけない<strong class="color4">ジブン</strong>に、なかなか踏み出せない<strong class="color4">ジブン</strong>に。</p>
-          <p><strong class="color5">銭湯の、なかの、サウナ</strong>をぜひ。</p>
+          <p>世は空前のサウナブーム。</p>
+          <p>対照的に、銭湯は燃料の高騰や来客数減少で休業や廃業となる施設が増えています。</p>
+          <p>銭湯とサウナを、もっと気軽に。もっと日常に。そんな風に感じてくれることを願って。</p>
           <p class="margin"></p>
           <div class="emergency">
             <table class="table-borderless">
               <tbody><tr>
                 <td class="middle"><img src="/img/exclamation.svg"></td>
-                <td class="note">大変心苦しいのですが、本誌はメインの読者層を東京近郊に住んでいる男性としております。銭湯の数は都道府県別でかなり偏りがございます。また、著者は男性のため、あくまで男湯サウナのレビュー本になります。</td>
+                <td>大変心苦しいのですが、本誌はメインの読者層を東京近郊に住んでいる男性としております。銭湯の数は都道府県別でかなり偏りがございます。また、筆者は男性ですのであくまで男性視点でのレビュー本になります。</td>
               </tr></tbody>
             </table>
           </div>
@@ -567,25 +515,13 @@ document.documentElement.style.setProperty( '--vh', height/100 + 'px');
       <div class="row">
         <div class="col-lg-4">
           <h1 class="booktitle">銭湯でサウナ</h1>
-          <p class="booksubtitle">vol.2 東京都 中野区編</p>
+          <p class="booksubtitle">銭湯サウナ入門ガイドブック<br />東京都板橋区編</p>
+          <p>発行日 2022.12.31(日)</p>
           <p class="margin"></p>
-<<<<<<< HEAD
-          <h4>各種通販サイト、店舗にて頒布中</h4>
+          <h4>通販サイトにて頒布中</h4>
           <a class="store btn btn-danger" href="https://ponytail-drops.booth.pm/items/4466531" target="_blank" role="button">BOOTH</a>
-          <a class="store btn btn-danger" href="https://www.melonbooks.co.jp/detail/detail.php?product_id=1815281" target="_blank" role="button">Melonbooks</a>
-          <a class="store btn btn-danger disabled" href="#" target="_blank" role="button">COMIC ZIN(準備中)</a>
+          <a class="store btn btn-danger" href="https://maniacs-m.com/product/036sds-01/" target="_blank" role="button">Maniacs manufacturing</a>
           <p class="margin"></p>
-          <p>発行 コミックマーケット101 2022.12.31(日)</p>
-=======
-          <h4>頒布情報</h4>
-          <p>コミックマーケット104 2024.8.12(月)<br />2日目 東3ホール "ウ"ブロック43ab<br /><strong class="color1">Circles' Square + suntrap notes.</strong><br />にて委託頒布予定</p>
->>>>>>> 23374bc (中野編ページ作成)
-          <p>イベント頒布価格 600円</p>
-          <p class="margin"></p>
-          <h4>各種通販サイトにて頒布予定</h4>
-          <a class="store btn btn-danger disabled" href="#" target="_blank" role="button">BOOTH(準備中)</a>
-          <a class="store btn btn-danger disabled" href="#" target="_blank" role="button">Maniacs manufacturing(準備中)</a>
-          <a class="store btn btn-danger disabled" href="#" target="_blank" role="button">Melonbooks(準備中)</a>
           <p class="margin"></p>
           <table class="table table-sm table-borderless">
             <tbody>
@@ -597,9 +533,9 @@ document.documentElement.style.setProperty( '--vh', height/100 + 'px');
           </table>
         </div>
         <div class="col-lg-8" >
-          <img src="/img/nakano/thumb_cover.webp" class="sample" alt="cover">
-          <img src="/img/nakano/thumb_contents1.webp" class="sample" alt="content1">
-          <img src="/img/nakano/thumb_contents2.webp" class="sample" alt="content2">
+          <img src="/img/cover.jpg" class="sample" alt="cover">
+          <img src="/img/content1.webp" class="sample" alt="content1">
+          <img src="/img/content2.webp" class="sample" alt="content2">
         </div>
       </div>
     </div>
@@ -620,7 +556,7 @@ document.documentElement.style.setProperty( '--vh', height/100 + 'px');
       <div class="row">
         <div class="col center">
           <p><img class="ponytaildrops_logo" src="/img/ponytaildrops_logo.svg"></p>
-          <p>Copyright (c) 2024 ponytail drops All Rights Reserved.</p>
+          <p>Copyright (c) 2022 ponytail drops All Rights Reserved.</p>
         </div>
       </div>
     </div>
